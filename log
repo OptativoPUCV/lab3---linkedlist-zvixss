@@ -8,3 +8,123 @@ Wed 27 Mar 2024 10:04:31 PM UTC:
  tests:  1|5
 total_score: 10/70
 1eefffa
+Sat 30 Mar 2024 01:31:32 AM UTC: 
+ list.c | 165 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 165 insertions(+)
+In file included from test.c:5:
+list.c:88:8: error: redefinition of ‘struct Node’
+   88 | struct Node {
+      |        ^~~~
+list.c:8:8: note: originally defined here
+    8 | struct Node {
+      |        ^~~~
+list.c:94:8: error: redefinition of ‘struct List’
+   94 | struct List {
+      |        ^~~~
+list.c:14:8: note: originally defined here
+   14 | struct List {
+      |        ^~~~
+list.c:102:8: error: redefinition of ‘createNode’
+  102 | Node * createNode(void * data) {
+      |        ^~~~~~~~~~
+list.c:22:8: note: previous definition of ‘createNode’ with type ‘Node *(void *)’ {aka ‘struct Node *(void *)’}
+   22 | Node * createNode(void * data) {
+      |        ^~~~~~~~~~
+list.c:114:8: error: redefinition of ‘createList’
+  114 | List * createList() {
+      |        ^~~~~~~~~~
+list.c:31:8: note: previous definition of ‘createList’ with type ‘List *(void)’ {aka ‘struct List *(void)’}
+   31 | List * createList()
+      |        ^~~~~~~~~~
+list.c:125:8: error: redefinition of ‘firstList’
+  125 | void * firstList(List * list) {
+      |        ^~~~~~~~~
+list.c:40:8: note: previous definition of ‘firstList’ with type ‘void *(List *)’ {aka ‘void *(struct List *)’}
+   40 | void * firstList(List * list)
+      |        ^~~~~~~~~
+list.c:136:8: error: redefinition of ‘nextList’
+  136 | void * nextList(List * list) {
+      |        ^~~~~~~~
+list.c:45:8: note: previous definition of ‘nextList’ with type ‘void *(List *)’ {aka ‘void *(struct List *)’}
+   45 | void * nextList(List * list) {
+      |        ^~~~~~~~
+list.c:147:8: error: redefinition of ‘lastList’
+  147 | void * lastList(List * list) {
+      |        ^~~~~~~~
+list.c:49:8: note: previous definition of ‘lastList’ with type ‘void *(List *)’ {aka ‘void *(struct List *)’}
+   49 | void * lastList(List * list) {
+      |        ^~~~~~~~
+list.c:157:8: error: redefinition of ‘prevList’
+  157 | void * prevList(List * list) {
+      |        ^~~~~~~~
+list.c:53:8: note: previous definition of ‘prevList’ with type ‘void *(List *)’ {aka ‘void *(struct List *)’}
+   53 | void * prevList(List * list) {
+      |        ^~~~~~~~
+list.c:167:6: error: redefinition of ‘pushFront’
+  167 | void pushFront(List * list, void * data) {
+      |      ^~~~~~~~~
+list.c:57:6: note: previous definition of ‘pushFront’ with type ‘void(List *, void *)’ {aka ‘void(struct List *, void *)’}
+   57 | void pushFront(List * list, void * data) {
+      |      ^~~~~~~~~
+list.c:188:6: error: redefinition of ‘pushBack’
+  188 | void pushBack(List * list, void * data) {
+      |      ^~~~~~~~
+list.c:60:6: note: previous definition of ‘pushBack’ with type ‘void(List *, void *)’ {aka ‘void(struct List *, void *)’}
+   60 | void pushBack(List * list, void * data) {
+      |      ^~~~~~~~
+list.c:193:6: error: redefinition of ‘pushCurrent’
+  193 | void pushCurrent(List * list, void * data) {
+      |      ^~~~~~~~~~~
+list.c:65:6: note: previous definition of ‘pushCurrent’ with type ‘void(List *, void *)’ {aka ‘void(struct List *, void *)’}
+   65 | void pushCurrent(List * list, void * data) {
+      |      ^~~~~~~~~~~
+list.c:209:8: error: redefinition of ‘popFront’
+  209 | void * popFront(List * list) {
+      |        ^~~~~~~~
+list.c:68:8: note: previous definition of ‘popFront’ with type ‘void *(List *)’ {aka ‘void *(struct List *)’}
+   68 | void * popFront(List * list) {
+      |        ^~~~~~~~
+list.c:214:8: error: redefinition of ‘popBack’
+  214 | void * popBack(List * list) {
+      |        ^~~~~~~
+list.c:73:8: note: previous definition of ‘popBack’ with type ‘void *(List *)’ {aka ‘void *(struct List *)’}
+   73 | void * popBack(List * list) {
+      |        ^~~~~~~
+list.c:219:8: error: redefinition of ‘popCurrent’
+  219 | void * popCurrent(List * list) {
+      |        ^~~~~~~~~~
+list.c:78:8: note: previous definition of ‘popCurrent’ with type ‘void *(List *)’ {aka ‘void *(struct List *)’}
+   78 | void * popCurrent(List * list) {
+      |        ^~~~~~~~~~
+list.c:245:6: error: redefinition of ‘cleanList’
+  245 | void cleanList(List * list) {
+      |      ^~~~~~~~~
+list.c:82:6: note: previous definition of ‘cleanList’ with type ‘void(List *)’ {aka ‘void(struct List *)’}
+   82 | void cleanList(List * list) {
+      |      ^~~~~~~~~
+list.c:250:8: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘.’ token
+  250 | message.txt
+      |        ^
+test.c: In function ‘test_first_next’:
+test.c:107:17: error: ‘msg’ undeclared (first use in this function)
+  107 |         sprintf(msg,"firstList retorna %d",*j);
+      |                 ^~~
+test.c:107:17: note: each undeclared identifier is reported only once for each function it appears in
+test.c: In function ‘test_last_prev’:
+test.c:180:17: error: ‘msg’ undeclared (first use in this function)
+  180 |         sprintf(msg,"lastList retorna %d",*j);
+      |                 ^~~
+test.c: In function ‘test_pushfront’:
+test.c:240:13: error: ‘msg’ undeclared (first use in this function)
+  240 |     sprintf(msg, "Insertando %d a la lista (pushfront)",*j);
+      |             ^~~
+test.c: In function ‘test_pushcurrent’:
+test.c:307:13: error: ‘msg’ undeclared (first use in this function)
+  307 |     sprintf(msg, "pushFront(%d)",*j);
+      |             ^~~
+test.c: In function ‘test_popcurrent’:
+test.c:381:17: error: ‘msg’ undeclared (first use in this function)
+  381 |         sprintf(msg,"PopCurrent retorna %d",*k);
+      |                 ^~~
+Compilation failed
+0bac206
