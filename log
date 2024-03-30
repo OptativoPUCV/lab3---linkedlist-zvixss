@@ -140,3 +140,17 @@ Sat 30 Mar 2024 01:32:33 AM UTC:
  tests:  2|5
 total_score: 15/70
 e4ec861
+Sat 30 Mar 2024 01:33:50 AM UTC: 
+ list.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘nextList’:
+list.c:52:3: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   52 |   if (list == NULL || list->head == NULL || list->current == NULL || list->current->next == NULL)
+      |   ^~
+list.c:55:5: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   55 |     list->current = list->current->next;
+      |     ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+1c6ede6
